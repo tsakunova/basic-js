@@ -10,7 +10,7 @@ const chainMaker = {
     return this;
   },
   removeLink(position) {
-    if (position > 1 && position <= this.chain.length) {
+    if (position >= 1 && position <= this.chain.length) {
       this.chain.splice(position - 1, 1);
     } else {
       this.chain = []
@@ -24,12 +24,12 @@ const chainMaker = {
     return this;
   },
   finishChain() {
-    let finish = "";
+    let finish = '';
     for (let i = 0; i < this.chain.length; i++) {
       if (i === this.chain.length - 1) {
-       finish = finish + '( ' + this.chain[i] + ' )'
+       finish = finish + '( ' + String(this.chain[i]) + ' )'
       } else {
-        finish = finish + '( ' + this.chain[i] + ' )~~'
+        finish = finish + '( ' + String(this.chain[i]) + ' )~~'
       }
     }
     this.chain = []
